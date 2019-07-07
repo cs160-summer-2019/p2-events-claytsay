@@ -39,8 +39,16 @@
 
 
 <script type="text/javascript">
-
-	// your solution here
+  var bubbleColours = ["bg-purple", "bg-green", "bg-blue", "bg-orange"];
+  var bubbleGen = window.setInterval(() => {
+    let randColour = bubbleColours[Math.floor(Math.random() * bubbleColours.length)];
+    $(".shape-container").append(
+      `<div class="p2-circle ${randColour}">${randColour.substring(3)}</div>`
+    );
+  }, 1000);
+  $(".btn").click(() => {
+    window.clearInterval(bubbleGen);
+  });
 
 </script>
 </body>
